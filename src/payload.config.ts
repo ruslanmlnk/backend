@@ -32,11 +32,11 @@ export default buildConfig({
     outputFile: path.resolve(dirname, 'payload-types.ts'),
   },
   cors: [
-    "http://localhost:3000",
+    "http://ostriv-backend-pss7wq-99f886-46-175-148-52.traefik.me",
     "http://localhost:3001",
   ],
   csrf: [
-    "http://localhost:3000",
+    "http://ostriv-backend-pss7wq-99f886-46-175-148-52.traefik.me",
     "http://localhost:3001",
   ],
   db: postgresAdapter({

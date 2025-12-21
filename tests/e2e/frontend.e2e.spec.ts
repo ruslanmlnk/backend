@@ -9,7 +9,7 @@ test.describe('Frontend', () => {
   })
 
   test('can go on homepage', async ({ page }) => {
-    await page.goto('http://localhost:3000')
+    await page.goto('http://ostriv-backend-pss7wq-99f886-46-175-148-52.traefik.me')
 
     await expect(page).toHaveTitle(/Payload Blank Template/)
 
