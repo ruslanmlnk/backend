@@ -33,11 +33,11 @@ export default buildConfig({
   },
   cors: [
     "http://ostriv-backend-pss7wq-99f886-46-175-148-52.traefik.me",
-    "http://localhost:3001",
+    "http://ostriv-frontend-4aiii8-af8fcc-46-175-148-52.traefik.me",
   ],
   csrf: [
     "http://ostriv-backend-pss7wq-99f886-46-175-148-52.traefik.me",
-    "http://localhost:3001",
+    "http://ostriv-frontend-4aiii8-af8fcc-46-175-148-52.traefik.me",
   ],
   db: postgresAdapter({
     pool: {
