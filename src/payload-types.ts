@@ -189,6 +189,10 @@ export interface Category {
  */
 export interface Product {
   id: number;
+  meta?: {
+    metaTitle?: string | null;
+    metaDescription?: string | null;
+  };
   name: string;
   model?: string | null;
   slug?: string | null;
@@ -448,6 +452,12 @@ export interface CategoriesSelect<T extends boolean = true> {
  * via the `definition` "products_select".
  */
 export interface ProductsSelect<T extends boolean = true> {
+  meta?:
+    | T
+    | {
+        metaTitle?: T;
+        metaDescription?: T;
+      };
   name?: T;
   model?: T;
   slug?: T;
