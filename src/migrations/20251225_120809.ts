@@ -9,10 +9,10 @@ export async function up({ payload }: MigrateUpArgs): Promise<void> {
   `)
 }
 
-export async function down({ payload }: MigrateDownArgs): Promise<void> {
-  await payload.db.drizzle.execute(sql`
-    ALTER TABLE "products"
-      DROP COLUMN IF EXISTS "meta_meta_title",
-      DROP COLUMN IF EXISTS "meta_meta_description";
-  `)
-}
+	export async function down({ payload }: MigrateDownArgs): Promise<void> {
+	await payload.db.drizzle.execute(sql`
+		ALTER TABLE "products"
+		DROP COLUMN IF EXISTS "meta_meta_title",
+		DROP COLUMN IF EXISTS "meta_meta_description";
+	`)
+	}
