@@ -34,10 +34,14 @@ export default buildConfig({
   cors: [
     "http://ostriv-backend-pss7wq-99f886-46-175-148-52.traefik.me",
     "http://ostriv-frontend-4aiii8-af8fcc-46-175-148-52.traefik.me",
+    "https://admin.ostrowtor.net",
+    "https://ostrowtor.net",
   ],
   csrf: [
     "http://ostriv-backend-pss7wq-99f886-46-175-148-52.traefik.me",
     "http://ostriv-frontend-4aiii8-af8fcc-46-175-148-52.traefik.me",
+    "https://admin.ostrowtor.net",
+    "https://ostrowtor.net",
   ],
   db: postgresAdapter({
     pool: {
