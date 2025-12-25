@@ -1,5 +1,6 @@
 import type { CollectionConfig } from 'payload'
 import { slugify } from '../utils/slugify'
+import { seoFields } from '@/fields/seoFields'
 
 export const Products: CollectionConfig = {
   slug: 'products',
@@ -11,6 +12,7 @@ export const Products: CollectionConfig = {
     read: () => true,
   },
   fields: [
+    seoFields,
     {
       name: 'name',
       type: 'text',
