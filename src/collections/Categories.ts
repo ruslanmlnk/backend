@@ -17,6 +17,15 @@ export const Categories: CollectionConfig = {
       required: true,
     },
     {
+      name: 'order',
+      type: 'number',
+      required: false,
+      defaultValue: 0,
+      admin: {
+        description: 'Lower values are rendered first on the storefront.',
+      },
+    },
+    {
       name: 'slug',
       type: 'text',
       required: false,
