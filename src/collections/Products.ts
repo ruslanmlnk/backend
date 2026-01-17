@@ -77,6 +77,29 @@ export const Products: CollectionConfig = {
       type: 'textarea',
     },
     {
+      name: 'characteristics',
+      label: 'Характеристики',
+      type: 'array',
+      labels: {
+        singular: 'Характеристика',
+        plural: 'Характеристики',
+      },
+      fields: [
+        {
+          name: 'label',
+          label: 'Назва',
+          type: 'text',
+          required: true,
+        },
+        {
+          name: 'value',
+          label: 'Значення',
+          type: 'text',
+          required: true,
+        },
+      ],
+    },
+    {
       name: 'isHit',
       type: 'checkbox',
       defaultValue: false,

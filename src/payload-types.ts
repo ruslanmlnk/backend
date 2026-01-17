@@ -185,6 +185,15 @@ export interface Category {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "products_characteristics".
+ */
+export interface ProductCharacteristic {
+  id: string;
+  label?: string | null;
+  value?: string | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "products".
  */
 export interface Product {
@@ -204,6 +213,7 @@ export interface Product {
   rating?: number | null;
   discount?: number | null;
   description?: string | null;
+  characteristics?: ProductCharacteristic[] | null;
   isHit?: boolean | null;
   isNew?: boolean | null;
   image: number | Media;
@@ -469,6 +479,13 @@ export interface ProductsSelect<T extends boolean = true> {
   rating?: T;
   discount?: T;
   description?: T;
+  characteristics?:
+    | T
+    | {
+        id?: T;
+        label?: T;
+        value?: T;
+      };
   isHit?: T;
   isNew?: T;
   image?: T;
