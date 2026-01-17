@@ -56,6 +56,31 @@ export default buildConfig({
     } catch (error) {
       payload.logger.error({ msg: 'Failed to ensure contact_requests lock column', err: error });
     }
+
+    try {
+      await payload.db.drizzle?.execute(sql`
+        CREATE TABLE IF NOT EXISTS "products_characteristics" (
+          "_order" integer NOT NULL,
+          "_parent_id" integer NOT NULL,
+          "id" varchar PRIMARY KEY,
+          "label" varchar NOT NULL,
+          "value" varchar NOT NULL,
+          CONSTRAINT "products_characteristics_parent_fk"
+            FOREIGN KEY ("_parent_id") REFERENCES "products"("id")
+            ON DELETE CASCADE ON UPDATE NO ACTION
+        );
+      `);
+      await payload.db.drizzle?.execute(sql`
+        CREATE INDEX IF NOT EXISTS "products_characteristics_order_idx"
+          ON "products_characteristics" ("_order");
+      `);
+      await payload.db.drizzle?.execute(sql`
+        CREATE INDEX IF NOT EXISTS "products_characteristics_parent_idx"
+          ON "products_characteristics" ("_parent_id");
+      `);
+    } catch (error) {
+      payload.logger.error({ msg: 'Failed to ensure products_characteristics table', err: error });
+    }
   },
   sharp,
   plugins: [],
