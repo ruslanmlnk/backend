@@ -81,6 +81,14 @@ export default buildConfig({
     } catch (error) {
       payload.logger.error({ msg: 'Failed to ensure products_characteristics table', err: error });
     }
+
+    try {
+      await payload.db.drizzle?.execute(
+        sql`ALTER TABLE IF EXISTS "products" ADD COLUMN IF NOT EXISTS "article" varchar;`,
+      );
+    } catch (error) {
+      payload.logger.error({ msg: 'Failed to ensure products.article column', err: error });
+    }
   },
   sharp,
   plugins: [],
