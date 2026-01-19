@@ -204,6 +204,7 @@ export interface Product {
   };
   name: string;
   model?: string | null;
+  article?: string | null;
   slug?: string | null;
   brand?: (number | null) | Brand;
   category: number | Category;
@@ -470,6 +471,7 @@ export interface ProductsSelect<T extends boolean = true> {
       };
   name?: T;
   model?: T;
+  article?: T;
   slug?: T;
   brand?: T;
   category?: T;

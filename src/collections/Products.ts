@@ -24,6 +24,11 @@ export const Products: CollectionConfig = {
       label: 'Модель',
     },
     {
+      name: 'article',
+      type: 'text',
+      label: 'Артикул',
+    },
+    {
       name: 'slug',
       type: 'text',
       required: false,
